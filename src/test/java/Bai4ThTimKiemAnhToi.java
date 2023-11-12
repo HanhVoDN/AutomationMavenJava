@@ -12,6 +12,7 @@ import java.time.Duration;
 public class Bai4ThTimKiemAnhToi {
     public static void main(String[] args) throws InterruptedException {
         //Khởi tạo browser với Chrome
+        //
         WebDriver driver;
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
