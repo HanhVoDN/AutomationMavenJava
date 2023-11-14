@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-public class DemoMoveByOffset {
+public class DemoMoveToElement {
     static WebDriver driver;
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
@@ -17,15 +17,16 @@ public class DemoMoveByOffset {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        driver.navigate().to("https://demoqa.com/dragabble");
+        driver.navigate().to("https://demoqa.com/menu/");
+
+        // Identify the element to move the cursor to
+        WebElement menuItem = driver.findElement(By.xpath("//a[text()='Main Item 2']"));
 
         // Create Actions class instance
         Actions builder = new Actions(driver);
 
-        // Move the mouse cursor by a specified x and y offset
-        builder.moveByOffset(100, 100).perform();
-        builder.getActivePointer();
-        System.out.println("test la: " +builder.getActivePointer());
+        // Move the cursor to the specified element
+        builder.moveToElement(menuItem).perform();
 
         // Close the browser
         //driver.quit();
