@@ -15,10 +15,10 @@ public class DemoScrollToElementJavaScript {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        driver.navigate().to("https://demoqa.com/scroll");
+        driver.navigate().to("https://demoqa.com/text-box");
 
         // Identify the element to which you want to scroll
-        WebElement elementToScroll = driver.findElement(By.id("to-element"));
+        WebElement elementToScroll = driver.findElement(By.xpath("//div[text()='Interactions']"));
 
         // Scroll to the element using JavaScriptExecutor
         org.openqa.selenium.JavascriptExecutor js = (org.openqa.selenium.JavascriptExecutor) driver;
