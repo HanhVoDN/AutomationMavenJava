@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
-public class DemoScrollByAmoit {
+public class DemoScrollByAmount {
     static WebDriver driver;
     public static <JavascriptExecutor> void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
