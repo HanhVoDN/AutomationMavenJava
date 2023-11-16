@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class DemoJavascriptDragAnDrop {
+public class DemoJavascriptCheckElementDisplay {
     static WebDriver driver;
 
     public static void main(String[] args) {
@@ -19,14 +19,12 @@ public class DemoJavascriptDragAnDrop {
         driver.navigate().to("https://demoqa.com/droppable");
         // Find the source and target elements
         WebElement sourceElement = driver.findElement(By.id("draggable"));
-        WebElement targetElement = driver.findElement(By.id("droppable"));
+        //Check element display or not
+        boolean isDisplayed = (boolean) ((JavascriptExecutor) driver).executeScript("return document.getElementById('draggable').style.display !== 'none';");
+        System.out.println("Is displayed: " + isDisplayed);
 
-        // Perform drag-and-drop using JavaScript
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", sourceElement);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetElement);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].simulateDragDrop(arguments[1]);", sourceElement, targetElement);
 
-    // Close the browser
+        // Close the browser
     //driver.quit();
 }
 
