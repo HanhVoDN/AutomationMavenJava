@@ -22,9 +22,14 @@ public class DemoJavascriptClickElementCach2 {
         js.executeScript("document.getElementById('userName').setAttribute('value','HanhVo');");
         js.executeScript("document.getElementById('userEmail').setAttribute('value','admin02@mailinator.com');");
 
-        js.executeScript("document.getElementById('submit').click()");
+        //Click "Submit" button by detect Id
+        //js.executeScript("document.getElementById('submit').click()");
+
+        //Or click "Submit" button by detect class
+        js.executeScript("document.getElementsByClassName('btn btn-primary')[0].click()");
         Thread.sleep(2000);
-    // Close the browser
+
+        // Close the browser
     driver.quit();
 }
 
